@@ -1,5 +1,5 @@
 
-// Include Libraries
+
 #include "Arduino.h"
 #include "ESP8266.h"
 #include "PIR.h"
@@ -7,7 +7,7 @@
 #include "PiezoSpeaker.h"
 
 
-// Pin Definitions
+
 #define WIFI_PIN_TX	11
 #define WIFI_PIN_RX	10
 #define PIR_PIN_SIG	2
@@ -16,23 +16,14 @@
 
 
 
-// Global variables and defines
-// ====================================================================
-// vvvvvvvvvvvvvvvvvvvv ENTER YOUR WI-FI SETTINGS  vvvvvvvvvvvvvvvvvvvv
-//
-const char *SSID     = "WIFI-SSID"; // Enter your Wi-Fi name 
-const char *PASSWORD = "PASSWORD" ; // Enter your Wi-Fi password
-//
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-// ====================================================================
-char* const host = "www.google.com";
+
 int hostPort = 80;
-const int servoSMRestPosition   = 20;  //Starting position
-const int servoSMTargetPosition = 150; //Position when event is detected
-unsigned int thinSpeakerHoorayLength          = 6;                                                      // amount of notes in melody
-unsigned int thinSpeakerHoorayMelody[]        = {NOTE_C4, NOTE_E4, NOTE_G4, NOTE_C5, NOTE_G4, NOTE_C5}; // list of notes. List length must match HoorayLength!
-unsigned int thinSpeakerHoorayNoteDurations[] = {8      , 8      , 8      , 4      , 8      , 4      }; // note durations; 4 = quarter note, 8 = eighth note, etc. List length must match HoorayLength!
-// object initialization
+const int servoSMRestPosition   = 20;  
+const int servoSMTargetPosition = 150; 
+unsigned int thinSpeakerHoorayLength          = 6;                                                      
+unsigned int thinSpeakerHoorayMelody[]        = {NOTE_C4, NOTE_E4, NOTE_G4, NOTE_C5, NOTE_G4, NOTE_C5}; 
+unsigned int thinSpeakerHoorayNoteDurations[] = {8      , 8      , 8      , 4      , 8      , 4      }; 
+
 ESP8266 wifi(WIFI_PIN_RX,WIFI_PIN_TX);
 PIR pir(PIR_PIN_SIG);
 Servo servoSM;
@@ -40,7 +31,7 @@ PiezoSpeaker thinSpeaker(THINSPEAKER_PIN_POS);
 
 
 // define vars for testing menu
-const int timeout = 10000;       //define timeout of 10 sec
+const int timeout = 10000;       
 char menuOption = 0;
 long time0;
 
@@ -153,5 +144,5 @@ char menu()
     }
 }
 
-/*******************************************************
+
 
